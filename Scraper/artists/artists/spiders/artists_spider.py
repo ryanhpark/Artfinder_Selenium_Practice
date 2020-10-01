@@ -10,10 +10,9 @@ class Artists(Spider):
 
     def parse(self, response):
         # here I get the max page of numbers
-        # max_page = response.xpath(
-        #     '//ul[@class="pagination"]/li/a/@href').extract()[-2].split("=", 1)[1]
-        # list_pages = list(range(2, int(max_page)+1, 1))
-        list_pages = list(range(2, 4))
+        max_page = response.xpath(
+            '//ul[@class="pagination"]/li/a/@href').extract()[-2].split("=", 1)[1]
+        list_pages = list(range(2, int(max_page)+1, 1))
 
         list_urls = [
             f'https://www.artfinder.com/artist/api/artist-search/?page={num}' for num in list_pages]
@@ -98,7 +97,7 @@ class Artists(Spider):
         # slug
         slug_list = [re.findall(r'"([^"]*)"', x[len("slug")+4:])
                      for x in big_json_clean if x.startswith('"slug')]
-        biglist.append(profession_list)
+        biglist.append(slug_list)
 
         for i in range(0, len(biglist[0])):
             item = ArtistsItem()
