@@ -14,3 +14,4 @@ class ArtistsItem(scrapy.Item):
     artist_rating = scrapy.Field()
     seller_rating = scrapy.Field()
     is_artist_of_the_day_today = scrapy.Field()
+    slug = scrapy.Field()
