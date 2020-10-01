@@ -65,7 +65,7 @@ DOWNLOAD_DELAY = 2
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'countryEarnings.pipelines.WriteItemPipeline': 300,
+    'artists.pipelines.WriteItemPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
