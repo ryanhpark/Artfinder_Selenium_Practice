@@ -99,6 +99,12 @@ class Artists(Spider):
                      for x in big_json_clean if x.startswith('"slug')]
         biglist.append(slug_list)
 
+        # getting the page to check for duplicates
+        if re.findall('\d+', response.url) == []:
+            page = "1"
+        else:
+            page = re.findall('\d+', response.url)
+
         for i in range(0, len(biglist[0])):
             item = ArtistsItem()
             item['artFinderId'] = biglist[0][i][0]
@@ -114,5 +120,6 @@ class Artists(Spider):
             item['seller_rating'] = biglist[10][i][0]
             item['is_artist_of_the_day_today'] = biglist[11][i][0]
             item['slug'] = biglist[12][i][0]
+            item['page'] = page
 
             yield item

@@ -15,3 +15,6 @@ class ArtistsItem(scrapy.Item):
     seller_rating = scrapy.Field()
     is_artist_of_the_day_today = scrapy.Field()
     slug = scrapy.Field()
+
+    # check duplicates
+    page = scrapy.Field()
