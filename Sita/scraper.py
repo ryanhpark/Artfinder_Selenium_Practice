@@ -1,10 +1,20 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
 
 driver = webdriver.Firefox(executable_path='C:\Program Files\geckodriver.exe')
-driver.implicitly_wait(20)
 
-driver.get('https://www.artfinder.com/artists-az/#/')
+driver.get('https://www.artfinder.com/aarti-bartake#/')
 
-prod_names = driver.find_elements_by_xpath('').text
+    
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-print(names)
+
+
+
+
+
+
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+driver.find_element_by_xpath('//a[class="af-place fit-in"]').get_attribute("href")
