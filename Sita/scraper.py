@@ -22,7 +22,7 @@ slugs = []
 # establish driver
 driver = webdriver.Firefox(executable_path='C:\Program Files\geckodriver.exe')
 
-for slug in slugs_list[19:26]:
+for slug in slugs_list:
   # open artist's Me at Work page
   driver.get(f'https://www.artfinder.com/artist/{slug}/me-at-work/#/')
   time.sleep(2)
@@ -62,8 +62,6 @@ for slug in slugs_list[19:26]:
         '//div[@class="scroll-to-top af-opacity"]')))
 
       # get post titles, texts, and dates
-      WebDriverWait(driver, 10).until(
-          EC.presence_of_element_located((By.XPATH, '//summary')))
       posts = driver.find_elements_by_xpath('//summary')
       posts = [post.text.split('\n') for post in posts]
 
