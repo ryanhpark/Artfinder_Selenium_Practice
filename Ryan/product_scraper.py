@@ -23,7 +23,9 @@ for slug in slug_list[:2000]:
 	# Get to the artist's page
 	print(slug)
 	driver.get(f'https://www.artfinder.com/artist/{slug}/sort-artist_order/page-1/#/')
-	time.sleep(2)
+	WebDriverWait(driver, 15).until(
+		EC.presence_of_element_located((By.XPATH,
+			'//div[@class="af-place-container margin margin-s margin-bottom"]')))
 	# Close the pop up for discount
 	try:
 		close_pop_up = driver.find_element_by_xpath('//div[@class="af-register-modal--b"]//a[@class="close"]')
@@ -34,9 +36,7 @@ for slug in slug_list[:2000]:
 
 	# Scroll till the end
 	driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
-	# WebDriverWait(driver, 10).until(
-	# 	EC.presence_of_element_located((By.XPATH,
-	# 		'//div[@class="text-right margin margin-l margin-bottom"]')))
+	
 	time.sleep(2)
 	driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 	time.sleep(2)
@@ -59,7 +59,9 @@ for slug in slug_list[:2000]:
 			# WebDriverWait(driver, 10).until(
 			# 	EC.visibility_of_all_elements_located((By.XPATH,
 			# 		'//div[@style="display: flex; margin-left: -10px;"]')))
-			time.sleep(2)
+			WebDriverWait(driver, 15).until(
+				EC.presence_of_element_located((By.XPATH,
+					'//div[@class="af-place-container margin margin-s margin-bottom"]')))
 			# Scroll thill the bottom
 			driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 			# WebDriverWait(driver, 10).until(
