@@ -1,1 +1,1 @@
-This is the repository for practicing web scraping of using Selenium by Lucas Kim, Ryan Park, and Sita Thomas. The content scraped from <a href = "https://www.artfinder.com" rel="nofollow">Artfinder</a> includes 6000+ artists' information, art products, and activities.
+This is the repository for practicing web scraping using Selenium by Lucas Kim, Ryan Park, and Sita Thomas. The content scraped from <a href = "https://www.artfinder.com" rel="nofollow">Artfinder</a> includes 6000+ artists' information, art products, and activities.
