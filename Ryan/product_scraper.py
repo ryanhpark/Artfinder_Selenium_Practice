@@ -23,7 +23,7 @@ for slug in slug_list[:2000]:
 	# Get to the artist's page
 	print(slug)
 	driver.get(f'https://www.artfinder.com/artist/{slug}/sort-artist_order/page-1/#/')
-	WebDriverWait(driver, 15).until(
+	WebDriverWait(driver, 20).until(
 		EC.presence_of_element_located((By.XPATH,
 			'//div[@class="af-place-container margin margin-s margin-bottom"]')))
 	# Close the pop up for discount
@@ -37,7 +37,7 @@ for slug in slug_list[:2000]:
 	# Scroll till the end
 	driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 	
-	time.sleep(2)
+	time.sleep(3)
 	driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 	time.sleep(2)
 	# Find two elements
@@ -59,7 +59,7 @@ for slug in slug_list[:2000]:
 			# WebDriverWait(driver, 10).until(
 			# 	EC.visibility_of_all_elements_located((By.XPATH,
 			# 		'//div[@style="display: flex; margin-left: -10px;"]')))
-			WebDriverWait(driver, 15).until(
+			WebDriverWait(driver, 20).until(
 				EC.presence_of_element_located((By.XPATH,
 					'//div[@class="af-place-container margin margin-s margin-bottom"]')))
 			# Scroll thill the bottom
@@ -67,7 +67,7 @@ for slug in slug_list[:2000]:
 			# WebDriverWait(driver, 10).until(
 			# 	EC.visibility_of_all_elements_located((By.XPATH,
 			# 		'//div[@style="display: flex; margin-left: -10px;"]')))		
-			time.sleep(2)
+			time.sleep(3)
 			driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 			time.sleep(2)
 		# Scrape the product names
